@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import PlayersContext from '../players.context'
+import PlayersContext from '../contexts/players.context'
 
 const PlayersSelect = () => {
   const { players, changePlayers } = useContext(PlayersContext)

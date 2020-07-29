@@ -5,10 +5,12 @@ import { ALL_FACTIONS } from './constants/factions'
 import StepWizard from 'react-step-wizard'
 import Players from './Players'
 import Results from './Results'
-import PlayersContext from './players.context'
+import PlayersContext from './contexts/players.context'
+import ExtensionContext from './contexts/extension.context'
 
 function App() {
   const [players, setPlayers] = useState(2)
+  const [extension, setExtension] = useState(false)
   const changePlayers = (players) => setPlayers(players)
 
   return (
@@ -18,12 +20,18 @@ function App() {
           players,
           changePlayers
         }}
+      >
+        <ExtensionContext.Provider
+          value={{
+            extension,
+            setExtension
+          }}
         >
-        <p>{ players }</p>
-        <StepWizard>
-          <Players />
-          <Results />
-        </StepWizard>
+          <StepWizard>
+            <Players />
+            <Results />
+          </StepWizard>
+        </ExtensionContext.Provider>
       </PlayersContext.Provider>
     </div>
   );
