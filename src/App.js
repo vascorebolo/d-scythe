@@ -8,10 +8,6 @@ import Results from './Results'
 import PlayersContext from './players.context'
 
 function App() {
-  const test = () => {
-    console.log('here')
-  }
-
   const [players, setPlayers] = useState(2)
   const changePlayers = (players) => setPlayers(players)
 
@@ -23,8 +19,9 @@ function App() {
           changePlayers
         }}
         >
+        <p>{ players }</p>
         <StepWizard>
-          <Players callback={test} />
+          <Players />
           <Results />
         </StepWizard>
       </PlayersContext.Provider>

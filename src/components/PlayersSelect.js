@@ -6,14 +6,21 @@ const PlayersSelect = () => {
   const options = [2, 3, 4, 5]
 
   const handleChange = (e) => {
-    console.log(e, players, changePlayers)
+    changePlayers(e.target.value)
   }
 
   const renderOptions = () => {
     return options.map(option =>
       <div key={option}>
         <label htmlFor={option}>{ option }</label>
-        <input id={option} type="radio" name="players" value={option} onClick={handleChange} />
+        <input
+          id={option}
+          type="radio"
+          name="players"
+          value={option}
+          onClick={handleChange}
+          defaultChecked={players === option}
+        />
       </div>
     )
   }
