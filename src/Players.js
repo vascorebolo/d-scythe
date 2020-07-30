@@ -1,12 +1,14 @@
 import React from 'react'
 import PlayersSelect from './components/PlayersSelect'
+import ExtensionSelect from './components/ExtensionSelect'
 
-const Players = ({previousStep, nextStep, callback}) => {
+const Players = ({nextStep}) => {
   return (
     <div>
-      <h1 onClick={callback}>How many players?</h1>
+      <h1>How many players?</h1>
       <PlayersSelect />
-      <p><button onClick={nextStep}>Next Step</button></p>
+      <ExtensionSelect />
+      <div><button onClick={nextStep}>Next Step</button></div>
     </div>
   )
 }
