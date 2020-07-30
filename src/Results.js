@@ -4,6 +4,32 @@ import ExtensionContext from './contexts/extension.context'
 import { BASE_FACTIONS, ALL_FACTIONS } from './constants/factions'
 import { BASE_BOARDS, ALL_BOARDS } from './constants/boards'
 import bannedCombinations from './constants/banned'
+import styled from 'styled-components'
+
+const PlayerCard = styled.div`
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+
+  img {
+    flex-basis: 100px;
+    height: 100px;
+  }
+
+  .info {
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .color {
+    border-radius: 50%;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 70px;
+  }
+`
 
 const Results = ({
     isActive
@@ -52,13 +78,15 @@ const Results = ({
     } while(player <= players)
 
     return results.map((combo, index) => { return (
-      <div key={combo[0].name}>
-        <h4>Player {index + 1}</h4>
-        <p>
-          <img alt={combo[0].name} src={`images/${combo[0].image}`} style={{width: '100px'}} />
-          { combo[0].name } - { combo[1] }
-        </p>
-      </div>
+      <PlayerCard key={combo[0].name}>
+        <img alt={combo[0].name} src={`images/${combo[0].image}`} />
+        <div className="info">
+          <p><b>Player {index + 1}</b></p>
+          <p>{ combo[0].name } - { combo[1] }</p>
+          <p>{ combo[0].character }</p>
+        </div>
+        <span className="color" style={{backgroundColor: combo[0].color}}></span>
+      </PlayerCard>
     )})
   }
 
