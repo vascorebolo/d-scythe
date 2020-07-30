@@ -15,16 +15,6 @@ const Results = ({
     const factions = extension ? ALL_FACTIONS : BASE_FACTIONS
     const boards = extension ? ALL_BOARDS : BASE_BOARDS
 
-    console.log(
-      (
-        factions[bannedCombinations[0][0]].name === faction &&
-        boards[bannedCombinations[0][1]] === board
-      ) || (
-        factions[bannedCombinations[1][0]].name === faction &&
-        boards[bannedCombinations[1][1]] === board
-      )
-    )
-
     return (
       factions[bannedCombinations[0][0]].name === faction
       && boards[bannedCombinations[0][1]] === board
