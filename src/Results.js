@@ -39,12 +39,15 @@ const PlayerCard = styled.div`
         color: #bb3e1a;
         text-transform: uppercase;
       }
+
+      &.character {
+        opacity: 0.8;
+      }
     }
   }
 
   .color {
     border-radius: 50%;
-    border: 1px solid black;
     height: 30px;
     width: 30px;
     position: absolute;
@@ -103,9 +106,9 @@ const Results = ({
       <PlayerCard key={combo[0].name}>
         <img alt={combo[0].name} src={`images/${combo[0].image}`} />
         <div className="info">
-          <p><b>Player {index + 1}</b></p>
-          <p><b>{ combo[0].name } - { combo[1] }</b></p>
-          <p>{ combo[0].character }</p>
+          <p><b>Player {index + 1} - { combo[0].name }</b></p>
+          <p><b>{ combo[1] }</b></p>
+          <p className="character">{ combo[0].character }</p>
         </div>
         <span className="color" style={{backgroundColor: combo[0].color}}></span>
       </PlayerCard>

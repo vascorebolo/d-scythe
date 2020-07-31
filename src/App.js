@@ -26,6 +26,7 @@ function App() {
             setExtension
           }}
         >
+          <h1>D-Scythe</h1>
           <StepWizard>
             <Players />
             <Results />
