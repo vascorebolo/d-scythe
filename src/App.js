@@ -9,7 +9,7 @@ import ExtensionContext from './contexts/extension.context'
 
 function App() {
   const [players, setPlayers] = useState(2)
-  const [extension, setExtension] = useState(false)
+  const [extension, setExtension] = useState(true)
   const changePlayers = (players) => setPlayers(players)
 
   return (

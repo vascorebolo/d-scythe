@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Button from './components/Button'
 import PlayersContext from './contexts/players.context'
 import ExtensionContext from './contexts/extension.context'
 import { BASE_FACTIONS, ALL_FACTIONS } from './constants/factions'
@@ -77,11 +78,12 @@ const Results = ({
 
   return (
     <ResultsStyled>
-      <h1>Results</h1>
+      <h1>Combos</h1>
       <div style={{ width: '95%', maxWidth: '800px' }}>
         { isActive && computeResults() }
       </div>
-      <a href="#" onClick={previousStep} style={{ marginTop: '20px' }}>Redo</a>
+      <Button onClick={previousStep}>Reset</Button>
+
     </ResultsStyled>
   )
 }

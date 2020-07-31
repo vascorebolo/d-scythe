@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import PlayersContext from '../contexts/players.context'
+import styled from 'styled-components'
 
 const PlayersSelect = () => {
   const { players, changePlayers } = useContext(PlayersContext)
@@ -11,8 +12,7 @@ const PlayersSelect = () => {
 
   const renderOptions = () => {
     return options.map(option =>
-      <div key={option}>
-        <label htmlFor={option}>{ option }</label>
+      <RadioStyled key={option}>
         <input
           id={option}
           type="radio"
@@ -21,16 +21,51 @@ const PlayersSelect = () => {
           onClick={handleChange}
           defaultChecked={players === option}
         />
-      </div>
+        <label htmlFor={option}>{ option }</label>
+      </RadioStyled>
     )
   }
 
   return (
-    <div>
+    <RadiosWrapper>
       { renderOptions() }
-    </div>
+    </RadiosWrapper>
   )
 }
+
+const RadiosWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+const RadioStyled = styled.div`
+  input {
+    display: none;
+  }
+
+  input[type=radio]:checked + label {
+    background: #cf4e28;
+    color: #fff;
+  }
+
+  label {
+    cursor: pointer;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    border: 1px solid #cf4e28;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cf4e28;
+    font-size: calc(15px + 7vw);
+    transition: all 0.5s ease-in-out;
+
+    &:not(first-child) {
+      margin-left: 15px;
+    }
+  }
+`
 
 PlayersSelect.displayName = 'PlayersSelect'
 
