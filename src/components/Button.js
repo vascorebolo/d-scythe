@@ -3,16 +3,22 @@ import styled from 'styled-components'
 const Button = styled.button `
   appearance: none;
   background: #bb3e1a;
-  border-radius: 25px;
+  border-radius: 2.25vw;
   border: 0;
   color: #fff;
   font-family: 'Teko', sans-serif;
-  font-size: calc(15px + 2.2vw);
-  height: 50px;
+  font-size: calc(15px + 1.5vw);
+  height: 4.5vw;
   margin-top: 40px;
+  min-height: 50px;
   letter-spacing: .8px;
-  padding: 0 20px;
+  padding: 0 2.5vw;
   text-transform: uppercase;
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
 `
 
 export default Button
