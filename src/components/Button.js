@@ -12,6 +12,7 @@ const Button = styled.button `
   height: 4.5vw;
   margin-top: 40px;
   min-height: 50px;
+  min-width: 30vw;
   letter-spacing: .8px;
   padding: 0 2.5vw;
   text-transform: uppercase;
