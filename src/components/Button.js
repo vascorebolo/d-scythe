@@ -3,9 +3,10 @@ import styled from 'styled-components'
 const Button = styled.button `
   appearance: none;
   background: #bb3e1a;
-  border-radius: 2.25vw;
+  border-radius: calc(25px + 2.25vw);
   border: 0;
   color: #fff;
+  cursor: pointer;
   font-family: 'Teko', sans-serif;
   font-size: calc(15px + 1.5vw);
   height: 4.5vw;

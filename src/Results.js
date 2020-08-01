@@ -65,12 +65,14 @@ const Results = ({
         <img
           alt={combo[0].name}
           src={`images/${combo[0].image}`}
-          style={{ borderColor: `${combo[0].color}` }}
         />
         <div className="info">
           <p><b>Player {index + 1} - { combo[0].name }</b></p>
           <p><b>{ combo[1] }</b></p>
-          <p className="character">{ combo[0].character }</p>
+          <p className="character">
+            <span className="circle" style={{ background: `${combo[0].color}` }}></span>
+            { combo[0].character }
+          </p>
         </div>
       </PlayerCard>
     )})
@@ -110,7 +112,6 @@ const PlayerCard = styled.div `
     flex-basis: calc(50px + 10vw);
     height: calc(50px + 10vw);
     border-radius: 50%;
-    border: 5px solid;
   }
 
   .info {
@@ -128,6 +129,15 @@ const PlayerCard = styled.div `
 
       &.character {
         opacity: 0.8;
+
+        span {
+          border-radius: calc(14px + 1vw);
+          border: 2px solid #bb3e1a;
+          display: inline-block;
+          height: calc(14px + 1vw);
+          margin-right: 1.5vw;
+          width: calc(14px + 1vw);
+        }
       }
     }
   }
